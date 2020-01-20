@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Contactos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated">
+      Lista de contactos
+    </ion-list-header>
+
+    <ion-item *ngFor="let booking of Bookings" class="user-list">
+        <img [src]="booking.img" class="circular"/> 
+      <ion-label class="pad">
+        <h5>
+          <ion-icon name="person"></ion-icon> {{booking.name}}
+        </h5>
+        <p>
+          <ion-icon name="call"></ion-icon> {{booking.mobile}}
+        </p>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <ion-button clear [routerLink]="['/edit-appointment/', booking.$key]" color="danger">
+          <ion-icon  name="create" style="zoom:1.0"></ion-icon>
+        </ion-button>
+        <ion-button clear (click)="deleteBooking(booking.$key)">
+          <ion-icon name="trash" style="zoom:1.0"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-item>
+  </ion-list>

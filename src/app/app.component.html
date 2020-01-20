@@ -1,0 +1,31 @@
+<div *ngIf="showSplash" class="view">
+  <div class="plane main">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+  </div>
+  <p data-text="TE OBSERVO">TE OBSERVO</p>
+</div>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/home" class="ios" tab="home">
+      <ion-icon name="call"></ion-icon>
+      <ion-label>Contactos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button routerLinkActive="tab-selected" routerLink="/make-appointment" class="ios" tab="make-appointment">
+      <ion-icon name="person-add"></ion-icon>
+      <ion-label>Nuevo Contacto</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
